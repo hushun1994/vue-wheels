@@ -1,6 +1,6 @@
 <template>
   <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <g-icon v-if="icon" :name="icon"></g-icon>
+    <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -45,7 +45,7 @@ export default {
   }
   > .icon {
     order: 1;
-    margin-right: 0.1em;
+    margin-right: 0.2em;
   }
   > .content {
     order: 2;
@@ -54,7 +54,7 @@ export default {
     > .icon {
       order: 2;
       margin-right: 0;
-      margin-left: 0.1em;
+      margin-left: 0.2em;
     }
     > .content {
       order: 1;
