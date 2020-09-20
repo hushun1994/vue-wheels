@@ -10,7 +10,7 @@
   height: var(--button-height);
   font-size: var(--font-size);
   display: inline-flex;
-  vertical-align: top;
+  vertical-align: middle;
   justify-content: center;
   align-items: center;
   padding: 0 1em;
