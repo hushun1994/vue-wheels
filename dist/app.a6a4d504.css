@@ -23,7 +23,7 @@
   order: 1;
   margin-right: 0.1em;
 }
-.g-button > .iconWrapper {
+.g-button > .content {
   order: 2;
 }
 .g-button.icon-right > .icon {
@@ -31,6 +31,10 @@
   margin-right: 0;
   margin-left: 0.1em;
 }
-.g-button.icon-right > .iconWrapper {
+.g-button.icon-right > .content {
   order: 1;
+}
+.g-icon[data-v-852c11] {
+  width: 1em;
+  height: 1em;
 }
