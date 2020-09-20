@@ -12627,7 +12627,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 var _default = {
   mounted: function mounted() {
-    // console.log(this.$el.children);
     var _iterator = _createForOfIteratorHelper(this.$el.children),
         _step;
 
