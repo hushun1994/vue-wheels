@@ -2,7 +2,6 @@ import Vue from "vue";
 import Button from "./Button";
 import Icon from "./Icon";
 import ButtonGroup from "./Button-group";
-import { expect } from "chai";
 
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
