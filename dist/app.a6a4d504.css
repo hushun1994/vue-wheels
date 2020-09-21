@@ -1,3 +1,7 @@
+.g-icon {
+  width: 1em;
+  height: 1em;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -44,10 +48,6 @@
 }
 .g-button .loading {
   animation: spin 1s infinite linear;
-}
-.g-icon {
-  width: 1em;
-  height: 1em;
 }
 .g-button-group {
   display: inline-flex;

@@ -12427,13 +12427,84 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"src/Button.vue":[function(require,module,exports) {
+},{}],"src/Icon.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+//
+//
+//
+//
+//
+//
+var _default = {
+  props: ["name"]
+};
+exports.default = _default;
+        var $852c11 = exports.default || module.exports;
+      
+      if (typeof $852c11 === 'function') {
+        $852c11 = $852c11.options;
+      }
+    
+        /* template */
+        Object.assign($852c11, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("svg", { staticClass: "g-icon" }, [
+    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$852c11', $852c11);
+          } else {
+            api.reload('$852c11', $852c11);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/Button.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _Icon = _interopRequireDefault(require("./Icon"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -12449,6 +12520,9 @@ exports.default = void 0;
 //
 //
 var _default = {
+  components: {
+    "g-icon": _Icon.default
+  },
   props: {
     icon: {},
     iconPosition: {
@@ -12539,73 +12613,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/Icon.vue":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-//
-//
-//
-//
-//
-//
-var _default = {
-  props: ["name"]
-};
-exports.default = _default;
-        var $852c11 = exports.default || module.exports;
-      
-      if (typeof $852c11 === 'function') {
-        $852c11 = $852c11.options;
-      }
-    
-        /* template */
-        Object.assign($852c11, (function () {
-          var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("svg", { staticClass: "g-icon" }, [
-    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: null,
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$852c11', $852c11);
-          } else {
-            api.reload('$852c11', $852c11);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"_css_loader":"../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/Button-group.vue":[function(require,module,exports) {
+},{"./Icon":"src/Icon.vue","_css_loader":"../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/Button-group.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23790,114 +23798,122 @@ new _vue.default({
 _chai.default.use(_chaiSpies.default);
 
 var expect1 = _chai.default.expect;
-{
-  var Constructor = _vue.default.extend(_Button.default);
 
-  var vm = new Constructor({
-    propsData: {
-      icon: "setting"
-    }
-  });
-  vm.$mount();
-  var useElement = vm.$el.querySelector("use");
-  var href = useElement.getAttribute("xlink:href");
-  expect1(href).to.eq("#i-setting");
-  vm.$el.remove();
-  vm.$destroy();
-}
-{
-  var _Constructor = _vue.default.extend(_Button.default);
+try {
+  {
+    // 测试按钮含有 icon
+    var Constructor = _vue.default.extend(_Button.default);
 
-  var _vm = new _Constructor({
-    propsData: {
-      icon: "setting",
-      loading: true
-    }
-  });
+    var vm = new Constructor({
+      propsData: {
+        icon: "setting"
+      }
+    });
+    vm.$mount();
+    var useElement = vm.$el.querySelector("use");
+    var href = useElement.getAttribute("xlink:href");
+    expect1(href).to.eq("#i-setting");
+    vm.$el.remove();
+    vm.$destroy();
+  }
+  {
+    var _Constructor = _vue.default.extend(_Button.default);
 
-  _vm.$mount();
+    var _vm = new _Constructor({
+      propsData: {
+        icon: "setting",
+        loading: true
+      }
+    });
 
-  var _useElement = _vm.$el.querySelector("use");
+    _vm.$mount();
 
-  var _href = _useElement.getAttribute("xlink:href");
+    var _useElement = _vm.$el.querySelector("use");
 
-  expect1(_href).to.eq("#i-loading");
+    var _href = _useElement.getAttribute("xlink:href");
 
-  _vm.$el.remove();
+    expect1(_href).to.eq("#i-loading");
 
-  _vm.$destroy();
-}
-{
-  var div = document.createElement("div");
-  document.body.appendChild(div);
+    _vm.$el.remove();
 
-  var _Constructor2 = _vue.default.extend(_Button.default);
+    _vm.$destroy();
+  }
+  {
+    var div = document.createElement("div");
+    document.body.appendChild(div);
 
-  var _vm2 = new _Constructor2({
-    propsData: {
-      icon: "setting"
-    }
-  });
+    var _Constructor2 = _vue.default.extend(_Button.default);
 
-  _vm2.$mount(div);
+    var _vm2 = new _Constructor2({
+      propsData: {
+        icon: "setting"
+      }
+    });
 
-  var svg = _vm2.$el.querySelector("svg");
+    _vm2.$mount(div);
 
-  var _window$getComputedSt = window.getComputedStyle(svg),
-      order = _window$getComputedSt.order;
+    var svg = _vm2.$el.querySelector("svg");
 
-  expect1(order).to.eq("1");
+    var _window$getComputedSt = window.getComputedStyle(svg),
+        order = _window$getComputedSt.order;
 
-  _vm2.$el.remove();
+    expect1(order).to.eq("1");
 
-  _vm2.$destroy();
-}
-{
-  var _div = document.createElement("div");
+    _vm2.$el.remove();
 
-  document.body.appendChild(_div);
+    _vm2.$destroy();
+  }
+  {
+    var _div = document.createElement("div");
 
-  var _Constructor3 = _vue.default.extend(_Button.default);
+    document.body.appendChild(_div);
 
-  var _vm3 = new _Constructor3({
-    propsData: {
-      icon: "setting",
-      iconPosition: "right"
-    }
-  });
+    var _Constructor3 = _vue.default.extend(_Button.default);
 
-  _vm3.$mount(_div);
+    var _vm3 = new _Constructor3({
+      propsData: {
+        icon: "setting",
+        iconPosition: "right"
+      }
+    });
 
-  var _svg = _vm3.$el.querySelector("svg");
+    _vm3.$mount(_div);
 
-  var _window$getComputedSt2 = window.getComputedStyle(_svg),
-      _order = _window$getComputedSt2.order;
+    var _svg = _vm3.$el.querySelector("svg");
 
-  expect1(_order).to.eq("2");
+    var _window$getComputedSt2 = window.getComputedStyle(_svg),
+        _order = _window$getComputedSt2.order;
 
-  _vm3.$el.remove();
+    expect1(_order).to.eq("2");
 
-  _vm3.$destroy();
-} // mock
+    _vm3.$el.remove();
 
-{
-  var _Constructor4 = _vue.default.extend(_Button.default);
+    _vm3.$destroy();
+  } // mock
 
-  var _vm4 = new _Constructor4({
-    propsData: {
-      icon: "setting"
-    }
-  });
+  {
+    var _Constructor4 = _vue.default.extend(_Button.default);
 
-  _vm4.$mount();
+    var _vm4 = new _Constructor4({
+      propsData: {
+        icon: "setting"
+      }
+    });
 
-  var spy = _chai.default.spy(function () {});
+    _vm4.$mount();
 
-  _vm4.$on("click", spy);
+    var spy = _chai.default.spy(function () {});
 
-  _vm4.$el.click();
+    _vm4.$on("click", spy);
 
-  expect1(spy).to.have.been.called();
+    _vm4.$el.click();
+
+    expect1(spy).to.have.been.called();
+  }
+} catch (error) {
+  window.errors = [error];
+} finally {
+  console.log(window.errors);
 }
 },{"vue":"node_modules/vue/dist/vue.common.js","./Button":"src/Button.vue","./Icon":"src/Icon.vue","./Button-group":"src/Button-group.vue","chai":"node_modules/chai/index.js","chai-spies":"node_modules/chai-spies/chai-spies.js"}],"../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
