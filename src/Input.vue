@@ -6,10 +6,14 @@
       :disabled="disabled"
       :readonly="readonly"
       :error="error"
+      @change="$emit('change', $event)"
+      @input="$emit('input', $event)"
+      @focus="$emit('focus', $event)"
+      @blur="$emit('blur', $event)"
     />
     <template v-if="error">
       <Icon name="error" class="icon-error"></Icon>
-      <span class="error-message">{{ error }}</span>
+      <span class="errorMessage">{{ error }}</span>
     </template>
   </div>
 </template>
@@ -50,6 +54,7 @@ $red: #f1453d;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
   font-size: $font-size;
   > :not(:last-child) {
     margin-right: 0.5em;
@@ -82,7 +87,7 @@ $red: #f1453d;
   .icon-error {
     fill: $red;
   }
-  .error-message {
+  .errorMessage {
     color: $red;
   }
 }
