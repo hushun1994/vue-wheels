@@ -48,10 +48,24 @@
     <div id="app">
       <div class="box container">
         <g-row gutter="20">
-          <g-col>1</g-col>
-          <g-col>2</g-col>
+          <g-col
+            span="12"
+            :ipad="{span:8}"
+            :narrow-pc="{span:4}"
+            :pc="{span:2}"
+            :wide-pc="{span:1}"
+            >1</g-col
+          >
+          <g-col
+            span="12"
+            :ipad="{span:16}"
+            :narrow-pc="{span:20}"
+            :pc="{span:22}"
+            :wide-pc="{span:23}"
+            >11</g-col
+          >
         </g-row>
-        <g-row gutter="20">
+        <!-- <g-row gutter="20">
           <g-col>1</g-col>
           <g-col>2</g-col>
           <g-col>3</g-col>
@@ -70,7 +84,7 @@
         <g-row gutter="20">
           <g-col :span="4">1</g-col>
           <g-col :span="18" :offset="2">2</g-col>
-        </g-row>
+        </g-row> -->
       </div>
       <div class="box">
         <g-input v-model="message"></g-input>
