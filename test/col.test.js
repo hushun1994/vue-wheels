@@ -71,6 +71,7 @@ describe("Col", () => {
     div.remove();
     vm.$destroy();
   });
+
   it("接收 pc 属性", () => {
     const div = document.createElement("div");
     document.body.appendChild(div);
@@ -86,6 +87,7 @@ describe("Col", () => {
     div.remove();
     vm.$destroy();
   });
+
   it("接收 widePc 属性", () => {
     const div = document.createElement("div");
     document.body.appendChild(div);
