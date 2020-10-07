@@ -17,7 +17,7 @@ describe("Input", () => {
       vm.$destroy();
     });
 
-    it("接受 value", () => {
+    it("接收 value", () => {
       vm = new Constructor({
         propsData: {
           value: "1234",
@@ -27,7 +27,7 @@ describe("Input", () => {
       expect(inputElement.value).to.equal("1234");
     });
 
-    it("接受 disabled", () => {
+    it("接收 disabled", () => {
       vm = new Constructor({
         propsData: {
           disabled: true,
@@ -37,7 +37,7 @@ describe("Input", () => {
       expect(inputElement.disabled).to.equal(true);
     });
 
-    it("接受 readonly", () => {
+    it("接收 readonly", () => {
       vm = new Constructor({
         propsData: {
           readonly: true,
@@ -47,7 +47,7 @@ describe("Input", () => {
       expect(inputElement.readOnly).to.equal(true);
     });
 
-    it("接受 error", () => {
+    it("接收 error", () => {
       vm = new Constructor({
         propsData: {
           error: "你错了",
