@@ -36,12 +36,10 @@ new Vue({
     message: "hi",
   },
   created() {
-    this.$toast(
-      "很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字",
-      {
-        enableHtml: false,
-      }
-    );
+    this.$toast("很多文字", {
+      position: "middle",
+      enableHtml: false,
+    });
   },
   methods: {
     showToast() {
