@@ -37,9 +37,18 @@ new Vue({
   },
   created() {},
   methods: {
-    showToast() {
+    showToast1() {
+      this.showToast("top");
+    },
+    showToast2() {
+      this.showToast("middle");
+    },
+    showToast3() {
+      this.showToast("bottom");
+    },
+    showToast(position) {
       this.$toast(`当前时间：${new Date()}`, {
-        position: "middle",
+        position,
         enableHtml: false,
         autoClose: false,
         autoCloseDelay: 3,
