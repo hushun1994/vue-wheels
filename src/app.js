@@ -50,8 +50,7 @@ new Vue({
       this.$toast(`当前时间：${new Date()}`, {
         position,
         enableHtml: false,
-        autoClose: false,
-        autoCloseDelay: 3,
+        // autoClose: 3,
         closeButton: {
           text: "确定",
           callback() {
