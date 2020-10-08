@@ -36,11 +36,16 @@ new Vue({
     message: "hi",
   },
   created() {
-    // this.$toast();
+    this.$toast(
+      "很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字",
+      {
+        enableHtml: false,
+      }
+    );
   },
   methods: {
     showToast() {
-      this.$toast("你是傻叉吗");
+      // this.$toast("我是 message");
     },
   },
 });
