@@ -35,15 +35,21 @@ new Vue({
     loading3: false,
     message: "hi",
   },
-  created() {
-    this.$toast("很多文字", {
-      position: "middle",
-      enableHtml: false,
-    });
-  },
+  created() {},
   methods: {
     showToast() {
-      // this.$toast("我是 message");
+      this.$toast(`当前时间：${new Date()}`, {
+        position: "middle",
+        enableHtml: false,
+        autoClose: false,
+        autoCloseDelay: 3,
+        closeButton: {
+          text: "确定",
+          callback() {
+            console.log("调用了 callback");
+          },
+        },
+      });
     },
   },
 });

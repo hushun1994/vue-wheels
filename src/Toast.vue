@@ -57,9 +57,6 @@ export default {
       this.$el.remove();
       this.$destroy();
     },
-    log() {
-      console.log("测试");
-    },
     onClickClose() {
       this.close();
       if (this.closeButton && typeof this.closeButton.callback === "function") {
