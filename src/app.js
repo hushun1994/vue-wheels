@@ -41,10 +41,14 @@ Vue.use(plugin);
 new Vue({
   el: "#app",
   data: {
-    selectedTab: "sports",
+    selectedTab: "woman",
   },
   created() {},
   methods: {
+    yyy(data) {
+      console.log(222);
+      console.log(data);
+    },
     showToast1() {
       this.showToast("top");
     },
