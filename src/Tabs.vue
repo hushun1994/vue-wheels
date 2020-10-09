@@ -11,7 +11,7 @@ export default {
   props: {
     selected: {
       type: String,
-      requiired: true,
+      required: true,
     },
     direction: {
       type: String,
@@ -32,6 +32,13 @@ export default {
     };
   },
   mounted() {
+    if (this.$children.length === 0) {
+      console &&
+        console.warn &&
+        console.warn(
+          "tabs 的子组件应该是 tabs-head 和 tabs-body，但你没有写子组件"
+        );
+    }
     this.$children.forEach((vm) => {
       if (vm.$options.name === "wheelsTabsHead") {
         vm.$children.forEach((childVm) => {
