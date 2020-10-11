@@ -21,13 +21,20 @@
         --border-color-hover: #666;
       }
       #app {
-        margin: 100px;
-        padding: 20px;
+        /* margin: 100px; */
+        padding: 120px;
         border: 1px solid #666;
+        overflow: hidden;
+      }
+      #app2 {
+        /* margin: 100px; */
+        padding: 120px;
+        border: 5px solid #666;
         overflow: hidden;
       }
       body {
         font-size: var(--font-size);
+        height: 100vh;
       }
     </style>
   </head>
@@ -46,6 +53,7 @@
         <g-button>点击</g-button>
       </g-popover>
     </div>
+    <div id="app2"></div>
     <script src="./src/app.js"></script>
   </body>
 </html>
