@@ -22,6 +22,7 @@
       }
       #app {
         /* margin: 100px; */
+        /* display: flex; */
         padding: 200px;
         border: 1px solid #666;
         overflow: hidden;
@@ -36,24 +37,46 @@
         font-size: var(--font-size);
         height: 100vh;
       }
+      .box {
+        /* padding: 30px; */
+        margin: 100px;
+      }
     </style>
   </head>
   <body>
     <div id="app">
-      <g-popover>
-        <template slot="content">
-          <div>
-            dqdqdbqwdbqwdhqwdbqwhdqwdhqwjddqwdqwdbqwhdbqwdwqdbqwdbqwhdbqhwdqwbdhqwbdhqwbdhqwbdqwbdjhbqwh
-          </div>
-        </template>
-        <g-button>点击</g-button>
-      </g-popover>
-      <g-popover>
-        <template slot="content">
-          <div>popover内容</div>
-        </template>
-        <g-button>点击</g-button>
-      </g-popover>
+      <div class="box">
+        <g-popover>
+          <template slot="content">
+            <div>popover内容</div>
+          </template>
+          <g-button>点击</g-button>
+        </g-popover>
+      </div>
+      <div class="box">
+        <g-popover position="bottom">
+          <template slot="content">
+            <div>popover内容</div>
+          </template>
+          <g-button>点击</g-button>
+        </g-popover>
+      </div>
+      <div class="box">
+        <g-popover position="left">
+          <template slot="content">
+            <div>popover内容</div>
+          </template>
+          <g-button>点击</g-button>
+        </g-popover>
+      </div>
+      <div class="box">
+        <g-popover position="right">
+          <template slot="content">
+            <div>popover内容</div>
+          </template>
+          <g-button>点击</g-button>
+        </g-popover>
+      </div>
     </div>
     <div id="app2"></div>
     <script src="./src/app.js"></script>
