@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onClick" ref="popover">
+  <div class="popover" ref="popover">
     <div
       ref="contentWrapper"
       class="content-wrapper"
@@ -30,12 +30,43 @@ export default {
         return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
       },
     },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator(value) {
+        return ['click', 'hover'].indexOf(value) >= 0
+      },
+    },
+  },
+  mounted() {
+    const { popover } = this.$refs
+    if (this.trigger === 'click') {
+      popover.addEventListener('click', this.onClick)
+    } else {
+      popover.addEventListener('mouseenter', this.open)
+      popover.addEventListener('mouseleave', this.close)
+    }
+  },
+  beforeDestroy() {
+    const { popover } = this.$refs
+    if (this.trigger === 'click') {
+      popover.removeEventListener('click', this.onClick)
+    } else {
+      popover.removeEventListener('mouseenter', this.open)
+      popover.removeEventListener('mouseleave', this.close)
+    }
   },
   computed: {
     classes() {
       return {
         [`position-${this.position}`]: true,
       }
+    },
+    openEvent() {
+      return this.triggerWrapper === 'click' ? 'click' : 'mouseenter'
+    },
+    closeEvent() {
+      return this.trigger === 'click' ? 'click' : 'mouseleave'
     },
   },
   methods: {
