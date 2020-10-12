@@ -20,6 +20,7 @@ export default {
   data() {
     return {
       visible: false,
+      timer: null,
     }
   },
   props: {
@@ -39,7 +40,7 @@ export default {
     },
   },
   mounted() {
-    const { popover } = this.$refs
+    const { popover, contentWrapper } = this.$refs
     if (this.trigger === 'click') {
       popover.addEventListener('click', this.onClick)
     } else {
@@ -83,7 +84,7 @@ export default {
         width: width1,
         height: height1,
       } = contentWrapper.getBoundingClientRect()
-      let hash = {
+      let positions = {
         top: { top: top + window.scrollY, left: left + window.scrollX },
         bottom: {
           top: top + window.scrollY + height,
@@ -98,8 +99,8 @@ export default {
           left: left + window.scrollX + width,
         },
       }
-      contentWrapper.style.top = hash[this.position].top + 'px'
-      contentWrapper.style.left = hash[this.position].left + 'px'
+      contentWrapper.style.top = positions[this.position].top + 'px'
+      contentWrapper.style.left = positions[this.position].left + 'px'
     },
     onClickDocument(e) {
       const { contentWrapper, popover } = this.$refs
@@ -111,15 +112,48 @@ export default {
       }
       this.close()
     },
+    setTimer() {
+      this.timer = setTimeout(() => {
+        this.removerContentListener()
+        this.visible = false
+        this.timer = null
+      }, 100)
+    },
+    clearTimer() {
+      clearTimeout(this.timer)
+    },
+    addContentLietener() {
+      if (this.trigger === 'hover' && this.timer === null) {
+        this.$refs.contentWrapper.addEventListener(
+          'mouseenter',
+          this.clearTimer
+        )
+        this.$refs.contentWrapper.addEventListener('mouseleave', this.setTimer)
+      }
+    },
+    removerContentListener() {
+      if (this.trigger === 'hover') {
+        this.$refs.contentWrapper.removeEventListener(
+          'mouseenter',
+          this.clearTimer
+        )
+        this.$refs.contentWrapper.removeEventListener(
+          'mouseleave',
+          this.setTimer
+        )
+      }
+    },
     open() {
+      this.clearTimer()
       this.visible = true
       this.$nextTick(() => {
         this.positionContent()
         document.addEventListener('click', this.onClickDocument)
+        this.addContentLietener()
       })
     },
     close() {
-      this.visible = false
+      this.setTimer()
       document.removeEventListener('click', this.onClickDocument)
     },
     onClick(event) {
@@ -167,6 +201,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       left: 19px;
+      border-bottom: none;
     }
     &::before {
       border-top-color: #333;
@@ -183,6 +218,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       left: 19px;
+      border-top: none;
     }
     &::before {
       border-bottom-color: #333;
@@ -199,6 +235,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       top: 50%;
+      border-right: none;
       transform: translateY(-50%);
     }
     &::before {
@@ -216,6 +253,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       top: 50%;
+      border-left: none;
       transform: translateY(-50%);
     }
     &::before {
