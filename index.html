@@ -47,8 +47,9 @@
     <div id="app">
       <div class="box">
         <g-popover>
-          <template slot="content">
+          <template slot="content" slot-scope="{close}">
             <div>popover内容</div>
+            <g-button @click="close">关闭</g-button>
           </template>
           <g-button>点击</g-button>
         </g-popover>

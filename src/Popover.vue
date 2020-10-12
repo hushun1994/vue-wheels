@@ -6,7 +6,7 @@
       :class="classes"
       v-if="visible"
     >
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <div ref="triggerWrapper">
       <slot></slot>
@@ -17,12 +17,6 @@
 <script>
 export default {
   name: 'wheelsPopover',
-  data() {
-    return {
-      visible: false,
-      timer: null,
-    }
-  },
   props: {
     position: {
       type: String,
@@ -37,6 +31,25 @@ export default {
       validator(value) {
         return ['click', 'hover'].indexOf(value) >= 0
       },
+    },
+  },
+  data() {
+    return {
+      visible: false,
+      timer: null,
+    }
+  },
+  computed: {
+    classes() {
+      return {
+        [`position-${this.position}`]: true,
+      }
+    },
+    openEvent() {
+      return this.triggerWrapper === 'click' ? 'click' : 'mouseenter'
+    },
+    closeEvent() {
+      return this.trigger === 'click' ? 'click' : 'mouseleave'
     },
   },
   mounted() {
@@ -56,19 +69,6 @@ export default {
       popover.removeEventListener('mouseenter', this.open)
       popover.removeEventListener('mouseleave', this.close)
     }
-  },
-  computed: {
-    classes() {
-      return {
-        [`position-${this.position}`]: true,
-      }
-    },
-    openEvent() {
-      return this.triggerWrapper === 'click' ? 'click' : 'mouseenter'
-    },
-    closeEvent() {
-      return this.trigger === 'click' ? 'click' : 'mouseleave'
-    },
   },
   methods: {
     positionContent() {
