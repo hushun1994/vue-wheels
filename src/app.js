@@ -47,34 +47,12 @@ Vue.use(plugin)
 new Vue({
   el: '#app',
   data: {
-    selectedTab: 'woman',
+    selectedTab: ['2'],
   },
   created() {},
   methods: {
-    yyy() {
-      // console.log(222);
-    },
-    showToast1() {
-      this.showToast('top')
-    },
-    showToast2() {
-      this.showToast('middle')
-    },
-    showToast3() {
-      this.showToast('bottom')
-    },
-    showToast(position) {
-      this.$toast(`当前时间：${new Date()}`, {
-        position,
-        enableHtml: false,
-        // autoClose: 3,
-        closeButton: {
-          text: '确定',
-          callback() {
-            console.log('调用了 callback')
-          },
-        },
-      })
+    changeSelected(name) {
+      this.selectedTab = name
     },
   },
 })
