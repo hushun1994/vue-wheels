@@ -41,9 +41,7 @@ export default {
   },
   computed: {
     classes() {
-      return {
-        [`position-${this.position}`]: true,
-      }
+      return { [`position-${this.position}`]: true }
     },
     openEvent() {
       return this.triggerWrapper === 'click' ? 'click' : 'mouseenter'
