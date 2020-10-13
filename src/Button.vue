@@ -6,26 +6,26 @@
   >
     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
     <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
-    <div class="content">
+    <div class="g-button-content">
       <slot></slot>
     </div>
   </button>
 </template>
 
 <script>
-import Icon from "./Icon";
+import Icon from './Icon'
 export default {
-  name: "wheelsButton",
+  name: 'wheelsButton',
   components: {
-    "g-icon": Icon,
+    'g-icon': Icon,
   },
   props: {
     icon: {},
     iconPosition: {
       type: String,
-      default: "left",
+      default: 'left',
       validator(value) {
-        return value === "left" || value === "right";
+        return value === 'left' || value === 'right'
       },
     },
     loading: {
@@ -33,10 +33,18 @@ export default {
       default: false,
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
+$font-size: 14px;
+$button-height: 32px;
+$button-bg: white;
+$button-active-bg: #eee;
+$border-radius: 4px;
+$color: #333;
+$border-color: #999;
+$border-color-hover: #666;
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -46,21 +54,21 @@ export default {
   }
 }
 .g-button {
-  height: var(--button-height);
-  font-size: var(--font-size);
+  font-size: $font-size;
+  height: $button-height;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background: $button-bg;
   display: inline-flex;
-  vertical-align: middle;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
   padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
   &:hover {
-    border-color: var(--border-color-hover);
+    border-color: $border-color-hover;
   }
   &:active {
-    background-color: var(--button-active-bg);
+    background-color: $button-active-bg;
   }
   &:focus {
     outline: none;
@@ -69,7 +77,7 @@ export default {
     order: 1;
     margin-right: 0.2em;
   }
-  > .content {
+  > .g-button-content {
     order: 2;
   }
   &.icon-right {
@@ -78,7 +86,7 @@ export default {
       margin-right: 0;
       margin-left: 0.2em;
     }
-    > .content {
+    > .g-button-content {
       order: 1;
     }
   }
