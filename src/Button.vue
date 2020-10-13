@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="g-button"
-    :class="{ [`icon-${iconPosition}`]: true }"
-    @click="$emit('click')"
-  >
+  <button class="g-button" :class="classes" @click="$emit('click')">
     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
     <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
     <div class="g-button-content">
@@ -31,6 +27,11 @@ export default {
     loading: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    classes() {
+      return { [`icon-${this.iconPosition}`]: true }
     },
   },
 }
@@ -72,6 +73,11 @@ $border-color-hover: #666;
   }
   &:focus {
     outline: none;
+  }
+  &[disabled] {
+    border-color: #aaa;
+    background: #eee;
+    cursor: not-allowed;
   }
   > .icon {
     order: 1;
