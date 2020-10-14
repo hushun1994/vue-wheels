@@ -2,7 +2,7 @@
   <transition name="slide">
     <div class="sider" v-if="visible">
       <slot></slot>
-      <button @click="hide">close</button>
+      <!-- <button @click="hide">close</button> -->
     </div>
   </transition>
 </template>
