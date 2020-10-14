@@ -9,22 +9,22 @@
 
 <script>
 export default {
-  name: "wheelsSider",
+  name: 'wheelsSider',
   data() {
     return {
       visible: true,
-    };
+    }
   },
   methods: {
     hide() {
-      this.visible = !this.visible;
+      this.visible = !this.visible
     },
     enter(el, done) {
-      el.marginLeft = "-200px";
-      done();
+      el.marginLeft = '-200px'
+      done()
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
