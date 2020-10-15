@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import Vue from "vue"
+import Vue from 'vue'
 export default {
-  name: "wheelsTabs",
+  name: 'wheelsTabs',
   props: {
     selected: {
       type: String,
@@ -15,9 +15,9 @@ export default {
     },
     direction: {
       type: String,
-      default: "horizontal",
+      default: 'horizontal',
       validator(value) {
-        return ["horizontal", "vertical"].indexOf(value) >= 0
+        return ['horizontal', 'vertical'].indexOf(value) >= 0
       },
     },
   },
@@ -37,19 +37,19 @@ export default {
         console &&
           console.warn &&
           console.warn(
-            "tabs 的子组件应该是 tabs-head 和 tabs-body，但你没有写子组件"
+            'tabs 的子组件应该是 tabs-head 和 tabs-body，但你没有写子组件'
           )
       }
     },
     selectTab() {
       this.$children.forEach((vm) => {
-        if (vm.$options.name === "wheelsTabsHead") {
+        if (vm.$options.name === 'wheelsTabsHead') {
           vm.$children.forEach((childVm) => {
             if (
-              childVm.$options.name === "wheelsTabsItem" &&
+              childVm.$options.name === 'wheelsTabsItem' &&
               childVm.name === this.selected
             ) {
-              this.eventBus.$emit("update:selected", this.selected, childVm)
+              this.eventBus.$emit('update:selected', this.selected, childVm)
             }
           })
         }
