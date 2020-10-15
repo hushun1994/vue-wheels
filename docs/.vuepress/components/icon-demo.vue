@@ -55,6 +55,6 @@ export default {
   margin-right: 10px;
 }
 strong {
-  color: #48b885;
+  color: #3eaf7c;
 }
 </style>
