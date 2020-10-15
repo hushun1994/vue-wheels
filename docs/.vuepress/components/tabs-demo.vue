@@ -27,7 +27,7 @@
       <strong>TabsBody</strong>、<strong>TabsItem</strong>、
       <strong>TabsPane</strong> 等一起使用，同时
       <strong>TabsItem</strong> 与<strong>TabsPane</strong> 都必须设置
-      <strong>name</strong> 属性，且是一一对应的关系，详见代码。
+      <strong>name</strong> 属性，且必须是一一对应的关系，详见代码。
     </p>
 
     <h2>选项</h2>
@@ -43,7 +43,7 @@
     <h4>2. name</h4>
     <p>
       <strong>TabsItem</strong> 和 <strong>TabsPane</strong> 都需要设置
-      <strong>name</strong> 属性，且是一一对应的关系， 必传的参数，类型为
+      <strong>name</strong> 属性，且必须是一一对应的关系， 必传的参数，类型为
       <strong>String</strong> 或 <strong>Number</strong>，与
       <strong>selected</strong> 属性关联。
     </p>
