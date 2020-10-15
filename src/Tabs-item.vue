@@ -62,6 +62,12 @@ $disabled-text-color: grey;
   cursor: pointer;
   &.active {
     color: $color;
+    > .g-icon {
+      fill: $color;
+    }
+  }
+  > .g-icon {
+    fill: #333;
   }
   &.disabled {
     cursor: not-allowed;
