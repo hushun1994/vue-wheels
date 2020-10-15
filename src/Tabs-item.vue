@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "wheelsTabsItem",
+  name: 'wheelsTabsItem',
   props: {
     disabled: {
       type: Boolean,
@@ -20,38 +20,38 @@ export default {
   data() {
     return {
       active: false,
-    };
+    }
   },
-  inject: ["eventBus"],
+  inject: ['eventBus'],
   computed: {
     classes() {
       return {
         active: this.active,
         disabled: this.disabled,
-      };
+      }
     },
   },
   created() {
     if (this.eventBus) {
-      this.eventBus.$on("update:selected", (name) => {
-        this.active = name === this.name;
-      });
+      this.eventBus.$on('update:selected', (name) => {
+        this.active = name === this.name
+      })
     }
   },
   methods: {
     onClick() {
       if (this.disabled) {
-        return;
+        return
       }
-      this.eventBus && this.eventBus.$emit("update:selected", this.name, this);
-      this.$emit("click", this);
+      this.eventBus && this.eventBus.$emit('update:selected', this.name, this)
+      this.$emit('click', this)
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
-$blue: blue;
+$color: #3eaf7c;
 $disabled-text-color: grey;
 .tabs-item {
   flex-shrink: 0;
@@ -61,8 +61,7 @@ $disabled-text-color: grey;
   height: 100%;
   cursor: pointer;
   &.active {
-    color: $blue;
-    font-weight: bold;
+    color: $color;
   }
   &.disabled {
     cursor: not-allowed;
