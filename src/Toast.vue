@@ -14,22 +14,22 @@
 
 <script>
 export default {
-  name: "wheelsToast",
+  name: 'wheelsToast',
   props: {
     autoClose: {
       type: [Boolean, Number],
       default: 5,
       validator(value) {
-        return value === false || typeof value === "number";
+        return value === false || typeof value === 'number'
       },
     },
     closeButton: {
       type: Object,
       default() {
         return {
-          text: "关闭",
+          text: '关闭',
           callback: undefined,
-        };
+        }
       },
     },
     enableHtml: {
@@ -38,9 +38,9 @@ export default {
     },
     position: {
       type: String,
-      default: "top",
+      default: 'top',
       validator(value) {
-        return ["top", "bottom", "middle"].indexOf(value) >= 0;
+        return ['top', 'bottom', 'middle'].indexOf(value) >= 0
       },
     },
   },
@@ -48,26 +48,26 @@ export default {
     toastClasses() {
       return {
         [`position-${this.position}`]: true,
-      };
+      }
     },
   },
   methods: {
     close() {
-      this.$el.remove();
-      this.$emit("close");
-      this.$destroy();
+      this.$el.remove()
+      this.$emit('close')
+      this.$destroy()
     },
     onClickClose() {
-      this.close();
-      if (this.closeButton && typeof this.closeButton.callback === "function") {
-        this.closeButton.callback(this);
+      this.close()
+      if (this.closeButton && typeof this.closeButton.callback === 'function') {
+        this.closeButton.callback(this)
       }
     },
     execAutoClose() {
       if (this.autoClose) {
         setTimeout(() => {
-          this.close();
-        }, this.autoClose * 1000);
+          this.close()
+        }, this.autoClose * 1000)
       }
     },
     updateStyles() {
@@ -75,16 +75,16 @@ export default {
         if (this.$refs.line) {
           this.$refs.line.style.height = `${
             this.$refs.wrapper.getBoundingClientRect().height
-          }px`;
+          }px`
         }
-      });
+      })
     },
   },
   mounted() {
-    this.updateStyles();
-    this.execAutoClose();
+    this.updateStyles()
+    this.execAutoClose()
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -120,6 +120,7 @@ $animation-duration: 0.5s;
   }
   &.position-top {
     top: 0;
+    z-index: 20;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     transform: translateX(-50%);
