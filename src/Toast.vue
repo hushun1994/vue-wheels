@@ -5,7 +5,7 @@
       <div v-else v-html="$slots.default[0]"></div>
     </div>
 
-    <div class="line" ref="line"></div>
+    <div class="line" v-if="closeButton" ref="line"></div>
     <span class="close" v-if="closeButton" @click="onClickClose()">
       {{ closeButton.text }}
     </span>
@@ -79,10 +79,23 @@ export default {
         }
       })
     },
+    resizeHandler() {
+      this.updateStyles()
+    },
+    bindEvents() {
+      window.addEventListener('resize', this.resizeHandler)
+    },
+    removeEvents() {
+      window.removeEventListener('resize', this.resizeHandler)
+    },
   },
   mounted() {
     this.updateStyles()
     this.execAutoClose()
+    this.bindEvents()
+  },
+  beforeDestroy() {
+    this.removeEvents()
   },
 }
 </script>
