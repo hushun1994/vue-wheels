@@ -111,6 +111,7 @@ $animation-duration: 0.5s;
   background: $toast-bg;
   position: fixed;
   left: 50%;
+  z-index: 20;
   color: #fff;
   padding: 0 16px;
   line-height: 1.8;
@@ -133,7 +134,6 @@ $animation-duration: 0.5s;
   }
   &.position-top {
     top: 0;
-    z-index: 20;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     transform: translateX(-50%);
