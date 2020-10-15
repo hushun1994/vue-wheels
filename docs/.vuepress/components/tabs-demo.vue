@@ -2,7 +2,7 @@
   <div>
     <h2>预览</h2>
     <div class="tabs-wrapper">
-      <g-tabs :selected.sync="selectedTab">
+      <g-tabs :selected="selectedTab">
         <g-tabs-head>
           <g-tabs-item name="tab1">
             <g-icon name="setting"></g-icon>Tab1
@@ -83,6 +83,6 @@ export default {
 
 <style lang="scss" scoped>
 strong {
-  color: #48b885;
+  color: #3eaf7c;
 }
 </style>
