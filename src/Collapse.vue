@@ -28,9 +28,14 @@ export default {
     }
   },
   mounted() {
-    this.eventBus.$emit('update:selected', this.selected)
+    let selectedCopy = JSON.parse(JSON.stringify(this.selected))
+    if (this.single && this.selected.length > 1) {
+      selectedCopy.splice(1)
+      this.eventBus.$emit('update:selected', selectedCopy)
+    } else {
+      this.eventBus.$emit('update:selected', selectedCopy)
+    }
     this.eventBus.$on('update:addSelected', (name) => {
-      let selectedCopy = JSON.parse(JSON.stringify(this.selected))
       if (this.single) {
         selectedCopy = [name]
       } else {
@@ -40,7 +45,6 @@ export default {
       this.eventBus.$emit('update:selected', selectedCopy)
     })
     this.eventBus.$on('update:removeSelected', (name) => {
-      let selectedCopy = JSON.parse(JSON.stringify(this.selected))
       let index = selectedCopy.indexOf(name)
       selectedCopy.splice(index, 1)
       this.$emit('update:selected', selectedCopy)
