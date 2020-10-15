@@ -28,6 +28,8 @@
         </g-layout>
       </g-layout>
     </div>
+
+    <h2>使用</h2>
     <Content slot-key="code1" />
     <p>
       通过
