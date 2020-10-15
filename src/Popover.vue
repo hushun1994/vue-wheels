@@ -177,6 +177,7 @@ $border-radius: 4px;
 }
 .content-wrapper {
   position: absolute;
+  z-index: 20;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   padding: 0.5em 1em;
