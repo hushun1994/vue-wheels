@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>预览</h2>
     <div class="wrapper">
       <g-layout class="layout-wrapper">
         <g-header class="header-wrapper"> header </g-header>
@@ -16,17 +17,56 @@
         <g-footer class="footer-wrapper"> footer </g-footer>
       </g-layout>
       <br />
-      <g-layout>
-        <g-header> header </g-header>
-        <g-layout>
-          <g-sider> sider </g-sider>
-          <g-layout>
-            <g-content> content </g-content>
-            <g-footer> footer </g-footer>
+      <g-layout class="layout-wrapper">
+        <g-header class="header-wrapper"> header </g-header>
+        <g-layout class="layout-wrapper">
+          <g-sider class="sider-wrapper"> sider </g-sider>
+          <g-layout class="layout-wrapper">
+            <g-content class="content-wrapper"> content </g-content>
+            <g-footer class="footer-wrapper"> footer </g-footer>
           </g-layout>
         </g-layout>
       </g-layout>
     </div>
+    <Content slot-key="code1" />
+    <p>
+      通过
+      <strong>Layout</strong
+      >、<strong>Header</strong>、<strong>Sider</strong>、<strong>Content</strong>、<strong
+        >Footer</strong
+      >
+      等组件嵌套使用完成布局。
+    </p>
+
+    <h2>选项</h2>
+    <Content slot-key="tip1" />
+    <h3>组件概述</h3>
+    <ul>
+      <li>
+        <strong>Layout</strong>：布局容器，内部可嵌套
+        <strong>Header</strong
+        >、<strong>Sider</strong>、<strong>Content</strong>、<strong
+          >Footer</strong
+        >
+        或 <strong>Layout</strong> 本身，可放置在任何父容器中。
+      </li>
+      <li>
+        <strong>Header</strong>：顶部布局，内部可嵌套任何元素，只能放在
+        <strong>Layout</strong> 中。
+      </li>
+      <li>
+        <strong>Sider</strong>：侧边栏，内部可嵌套任何元素，只能放在
+        <strong>Layout</strong> 中。
+      </li>
+      <li>
+        <strong>Content</strong>：内容部分，内部可嵌套任何元素，只能放在
+        <strong>Layout</strong> 中。
+      </li>
+      <li>
+        <strong>Footer</strong>：底部布局，内部可嵌套任何元素，只能放在
+        <strong>Layout</strong> 中。
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -64,8 +104,7 @@ $background: #3eaf7c;
     > .layout-wrapper {
       height: 6em;
       > .sider-wrapper {
-        width: 3em;
-        width: 200px;
+        width: 15%;
         background: lighten($background, 15%);
       }
       > .content-wrapper {
@@ -84,5 +123,8 @@ $background: #3eaf7c;
       background: $background;
     }
   }
+}
+strong {
+  color: #3eaf7c;
 }
 </style>
