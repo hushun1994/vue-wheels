@@ -10,35 +10,35 @@
 
 <script>
 export default {
-  name: "wheelsTabsHead",
-  inject: ["eventBus"],
+  name: 'wheelsTabsHead',
+  inject: ['eventBus'],
   mounted() {
-    this.eventBus.$on("update:selected", (item, vm) => {
+    this.eventBus.$on('update:selected', (item, vm) => {
       this.$nextTick(() => {
-        let { width, height, top, left } = vm.$el.getBoundingClientRect();
-        this.$refs.line.style.width = `${width}px`;
-        this.$refs.line.style.left = `${left}px`;
-      });
-    });
+        let { left: left1 } = this.$el.getBoundingClientRect()
+        let { width, left } = vm.$el.getBoundingClientRect()
+        this.$refs.line.style.width = `${width}px`
+        this.$refs.line.style.left = `${left - left1}px`
+      })
+    })
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
 $tab-height: 40px;
-$blue: blue;
+$border-bottom: #3eaf7c;
 $border-color: #ddd;
 .tabs-head {
   display: flex;
   height: $tab-height;
   justify-content: flex-start;
-  /* align-items: center; */
   position: relative;
   border-bottom: 1px solid $border-color;
   > .line {
     position: absolute;
     bottom: 0;
-    border-bottom: 1px solid $blue;
+    border-bottom: 1px solid $border-bottom;
     transition: all 0.25s;
   }
   > .actions-wrapper {
