@@ -40,7 +40,11 @@ export default {
 
 ## 文档
 
+[wheels UI 官网](https://hushun1994.github.io/vue-wheels)
+
 ## 提问
+
+[Issues](https://github.com/hushun1994/vue-wheels/issues)
 
 ## 变更记录
 
