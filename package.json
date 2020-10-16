@@ -27,7 +27,8 @@
   "dependencies": {
     "sass-loader": "^10.0.3",
     "vue": "^2.6.12",
-    "vue-hot-reload-api": "^2.3.4"
+    "vue-hot-reload-api": "^2.3.4",
+    "vuepress-plugin-code-copy": "^1.0.6"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
