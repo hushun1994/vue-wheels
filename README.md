@@ -16,34 +16,19 @@
 *, *::before, *::after {box-sizing: border-box}
 ```
 
-IE 8 及以上浏览器都支持次样式。
-
-你还需要设置默认颜色等变量 （后续会改为 SCSS 变量）
-
-```
-html {
-  --button-height: 32px;
-  --font-size: 14px;
-  --button-bg: white;
-  --button-active-bg: #eee;
-  --border-radius: 4px;
-  --color: #999;
-  --border-color: #999;
-  --border-color-hover: #666;
-}
-```
+IE 8 及以上浏览器都支持此样式。
 
 2. 安装 wheels
 
-   ```
-    npm i --save vue-wheels
-   ```
+```
+npm i --save vue-wheels-demo
+```
 
 3. 引入 wheels
 
 ```
-import { Button } from "vue-wheels-0-0-1";
-import "vue-wheels-0-0-1/dist/index.css";
+import { Button } from "vue-wheels-demo";
+import "vue-wheels-demo/dist/index.css";
 
 export default {
   name: "App",
