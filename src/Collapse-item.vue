@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-color: grey;
+$border-color: #b6b6b6;
 $border-radius: 4px;
 .collapseItem {
   > .title {
