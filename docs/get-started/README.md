@@ -7,8 +7,8 @@ title: 快速上手
 ## 引入必要资源
 
 ```js
-import { Button } from 'wheels-ui'
-import 'init-ui-demo/dist/index.css'
+import { Button } from 'vue-wheels-demo'
+import 'vue-wheels-demo/dist/index.css'
 ```
 
 ## 注册组件

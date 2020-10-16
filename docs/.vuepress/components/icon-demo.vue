@@ -26,7 +26,7 @@
 
     <h2>选项</h2>
     <h4>1. name</h4>
-    <p>设置 <strong>name</strong> 属性来选择需要使用图标</p>
+    <p>设置 <strong>name</strong> 属性来选择需要使用的图标</p>
     <h4>2. fill</h4>
     <p>设置 <strong>fill</strong> 属性为图标自定义颜色</p>
   </div>

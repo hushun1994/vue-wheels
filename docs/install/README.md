@@ -10,7 +10,7 @@ title: 安装
 
 ```sh
 # 最新稳定版
-npm install init-ui-demo
+npm install vue-wheels-demo
 ```
 
 如果你使用的是 Vue CLI 搭建的项目，默认使用的包管理工具是 yarn,则您需跳过此步，以免出错。
@@ -24,5 +24,5 @@ npm install init-ui-demo
 
 ```sh
 # 最新稳定版
-yarn add init-ui-demo
+yarn add vue-wheels-demo
 ```
