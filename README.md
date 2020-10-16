@@ -1,4 +1,4 @@
-# wheels - 一个 UI 组件
+# wheels - 一个 UI 组件库
 
 [![Build Status](https://www.travis-ci.org/hushun1994/vue-wheels.svg?branch=master)](https://www.travis-ci.org/hushun1994/vue-wheels)
 
@@ -12,26 +12,30 @@
 
 使用本框架前， 请在 CSS 中开启 border-box .
 
-```
-*, *::before, *::after {box-sizing: border-box}
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 ```
 
 IE 8 及以上浏览器都支持此样式。
 
 2. 安装 wheels
 
-```
+```sh
 npm i --save vue-wheels-demo
 ```
 
 3. 引入 wheels
 
-```
-import { Button } from "vue-wheels-demo";
-import "vue-wheels-demo/dist/index.css";
+```js
+import { Button } from 'vue-wheels-demo'
+import 'vue-wheels-demo/dist/index.css'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Button,
   },
