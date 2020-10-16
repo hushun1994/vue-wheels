@@ -2,7 +2,7 @@
 title: 安装
 ---
 
-<strong style="color: #3eaf7c">Init UI</strong> 是一个好用的 <strong style="color: #3eaf7c">UI</strong> 框架，提供了 <strong style="color: #3eaf7c">icon</strong>、<strong style="color: #3eaf7c">button</strong>、<strong style="color: #3eaf7c">input</strong>、<strong style="color: #3eaf7c">grid</strong>、<strong style="color: #3eaf7c">layout</strong>、<strong style="color: #3eaf7c">popover</strong>、<strong style="color: #3eaf7c">tabs</strong>、<strong style="color: #3eaf7c">toast</strong> 等常用组件，适合<strong style="color: #3eaf7c">移动端</strong>和 <strong style="color: #3eaf7c">PC 端</strong>使用。现在开始安装使用吧！
+<strong style="color: #3eaf7c">wheels UI</strong> 是一个好用的 <strong style="color: #3eaf7c">UI</strong> 框架，提供了 <strong style="color: #3eaf7c">icon</strong>、<strong style="color: #3eaf7c">button</strong>、<strong style="color: #3eaf7c">input</strong>、<strong style="color: #3eaf7c">grid</strong>、<strong style="color: #3eaf7c">layout</strong>、<strong style="color: #3eaf7c">popover</strong>、<strong style="color: #3eaf7c">tabs</strong>、<strong style="color: #3eaf7c">toast</strong> 等常用组件，适合<strong style="color: #3eaf7c">移动端</strong>和 <strong style="color: #3eaf7c">PC 端</strong>使用。现在开始安装使用吧！
 
 # 安装
 
