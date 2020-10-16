@@ -39,18 +39,20 @@
     </p>
 
     <h2>选项</h2>
-    <h4>1. <strong>icon</strong></h4>
+    <h4>1. icon</h4>
     <p>设置 <strong>icon</strong> 属性可以在按钮中嵌入一个图标，可选。</p>
-    <h4>2. <strong>iconPosition</strong></h4>
+    <h4>2. iconPosition</h4>
     <p>
-      在按钮中存在图标时，该属性可设置图标的位置，该属性支持两个值
-      <strong>left / right</strong>， 默认为 <strong>left</strong>。
+      在按钮中存在图标时，<strong>iconPosition</strong>
+      属性可设置图标的位置，该属性支持两个值 <strong>left / right</strong>，
+      默认为 <strong>left</strong>。
     </p>
-    <h4>3. <strong>loading</strong></h4>
+    <h4>3. loading</h4>
     <p>
-      该属性可以设置按钮的加载状态，给按钮动态绑定该属性，可切换状态，可选。
+      <strong>loading</strong>
+      属性可以设置按钮的加载状态，给按钮动态绑定该属性，可切换状态，可选。
     </p>
-    <h4>4. <strong>disabled</strong></h4>
+    <h4>4. disabled</h4>
     <p>设置 <strong>disabled</strong> 属性，可将按钮设置为禁用状态，可选。</p>
   </div>
 </template>

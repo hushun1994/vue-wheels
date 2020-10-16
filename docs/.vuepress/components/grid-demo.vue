@@ -255,6 +255,7 @@ $background: #3eaf7c;
       color: black;
       > span {
         display: block;
+        padding: 0.5em 0;
         background: #3eaf7c;
       }
     }
@@ -265,6 +266,6 @@ $background: #3eaf7c;
   padding: 1.4em 0;
 }
 strong {
-  color: #48b885;
+  color: #3eaf7c;
 }
 </style>

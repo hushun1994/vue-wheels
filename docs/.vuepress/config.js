@@ -2,7 +2,7 @@ module.exports = {
   title: 'wheels UI',
   description: '一个好用的 UI 框架',
   themeConfig: {
-    logo: '/hanfei.jpg',
+    logo: '/wheels.jpg',
     nav: [
       { text: '主页', link: '/' },
       { text: '文档', link: '/install/' },
@@ -11,10 +11,12 @@ module.exports = {
     sidebar: [
       {
         title: '入门',
+        collapsable: false,
         children: ['/install/', '/get-started/'],
       },
       {
         title: '组件',
+        collapsable: false,
         children: [
           '/components/icon',
           '/components/button',
@@ -28,7 +30,7 @@ module.exports = {
         ],
       },
     ],
-    // displayAllHeaders: true,
+    displayAllHeaders: true,
     markdown: {
       lineNumbers: true,
     },

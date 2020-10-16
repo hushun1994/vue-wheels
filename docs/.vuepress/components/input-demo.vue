@@ -17,25 +17,26 @@
     <Content slot-key="code1" />
 
     <h2>选项</h2>
-    <h4>1. <strong>disabled</strong></h4>
+    <h4>1. disabled</h4>
     <p>
       <strong>disabled</strong> 属性表示输入框是否被禁用，布尔类型， 默认为
-      false，可选。
+      <strong>false</strong>，可选。
     </p>
-    <h4>2. <strong>readonly</strong></h4>
+    <h4>2. readonly</h4>
     <p>
       <strong>readonly</strong> 属性表示只读状态，不可修改，布尔类型，与
-      disabled 相似，但 disabled 不可被 <strong>Tab 键</strong>选中，readonly
+      <strong>disabled</strong> 相似，但 <strong>disabled</strong> 不可被
+      <strong>Tab 键</strong>选中，<strong>readonly</strong>
       可以被选中，可选。
     </p>
-    <h4>3. <strong>error</strong></h4>
+    <h4>3. error</h4>
     <p>
       <strong>error</strong> 属性用于输入框错误状态的提示，<strong
         >error</strong
       >
       接收错误信息，可选。
     </p>
-    <h4>4. <strong>v-model</strong></h4>
+    <h4>4. v-model</h4>
     <p>
       支持双向绑定，若状态由外部组件维护，可用 <strong>.sync</strong> 修饰符代替
       <strong>v-model</strong>
