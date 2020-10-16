@@ -1,6 +1,6 @@
 {
-  "name": "vue-wheels-0-0-1",
-  "version": "0.0.4",
+  "name": "vue-wheels",
+  "version": "1.0.0",
   "description": "这是一个UI框架",
   "main": "dist/index.js",
   "scripts": {
