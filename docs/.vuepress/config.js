@@ -3,6 +3,9 @@ module.exports = {
   title: 'wheels UI',
   description: '一个好用的 UI 框架',
   plugins: [['vuepress-plugin-code-copy', true]],
+  markdown: {
+    lineNumbers: true,
+  },
   themeConfig: {
     logo: '/wheels.jpg',
     nav: [
@@ -33,8 +36,5 @@ module.exports = {
       },
     ],
     displayAllHeaders: true,
-    markdown: {
-      lineNumbers: true,
-    },
   },
 }
